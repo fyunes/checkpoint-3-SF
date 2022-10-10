@@ -1,11 +1,18 @@
 import { createSlice } from '@reduxjs/toolkit'
+import items from '../../assets/books.json'
 
-const initialState =[]
 
-export const bookSlice = createSlice({
-    name: 'book',
+const initialState =[...items.list]
+
+
+const booksSlice = createSlice({
+    name: "books",
     initialState,
-    reducers: {}
+    reducers: {
+        addBook: (state, action)=> {
+            state.push(action.payload)
+        }
+    }
 })
-// export const {  } = bookSlice.actions
-export default bookSlice.reducer
+export const { addBook } = booksSlice.actions;
+export default booksSlice.reducer;

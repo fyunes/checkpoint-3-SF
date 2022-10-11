@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux"
+import { Link } from "react-router-dom";
 
 
 
@@ -15,7 +16,8 @@ return (
                 <div className="cards h-100 d-flex flex-column justify-content-center">
                 <h2>{books.title}</h2>
                 <h3>{books.author}</h3>
-                <img className="bookImg mt-auto" src={books.imageLink} alt={books.imageLink}/>
+                <img className="bookImg mt-auto" src={books.imageLink} alt={books.imageLink}/>                
+                <Link to={`/edit-book/${books.isbn}`}> More info </Link>
                 </div>
                 </div>)})}       
     </div>
